@@ -1,0 +1,161 @@
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+$primary-color: #f03000;
+$bg-color: #f0f0f0;
+$font-img: #fff;
+$color-footer-bg: #444444;
+$font-base: 'Montserrat', sans-serif;
+
+body {
+  padding: 30px 20px;
+  font-family: $font-base;
+}
+
+// header ********************
+.hero {
+  text-align: center;
+
+  &__menu {
+    margin: 40px auto;
+  }
+}
+
+.nav {
+  display: flex;
+  justify-content: space-around;
+
+  &__item {
+    list-style-type: none;
+  }
+
+  &__item a {
+    color: $primary-color;
+    text-decoration: none;
+    font-size: 18px;
+    display: inline-block;
+    padding: 20px;
+  }
+
+  &__item a:hover {
+    background-color: $primary-color;
+    color: $font-img;
+  }
+}
+
+// MAIN ********************
+.tip {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 20px;
+  padding: 20px;
+  color: $font-img;
+
+  & span {
+    color: $font-img;
+    padding: 20px;
+    background-color: $primary-color;
+  }
+}
+.tip--big {
+  min-height: 240px;
+
+  & h3 {
+    margin-bottom: 20px;
+    font-size: 28px;
+  }
+}
+
+.tip--small {
+  min-height: 150px;
+  font-size: 20px;
+}
+
+.tip1 {
+  background-image: url('img/palmy.png');
+}
+
+.tip2 {
+  background-image: url('img/jezero2.png');
+}
+
+.tip3 {
+  background-image: url('img/nakole.png');
+}
+
+.tip4 {
+  background-image: url('img/lodicka.png');
+}
+
+.tip5 {
+  background-image: url('img/podkova.png');
+}
+
+.tip6 {
+  background-image: url('img/zatoka.png');
+}
+
+.services {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 20px;
+  background-color: $bg-color;
+  margin-bottom: 10px;
+
+  &__img {
+    margin: 0 auto;
+    align-self: flex-start;
+  }
+
+  &__text {
+    margin-left: 20px;
+    flex-basis: 80%;
+  }
+  & h5 {
+    font-size: 18px;
+    color: $primary-color;
+    margin-bottom: 10px;
+  }
+}
+
+section {
+  margin-bottom: 40px;
+}
+
+.new {
+  padding: 20px;
+  background-color: $bg-color;
+  margin-top: 20px;
+
+  &__date {
+    color: #888888;
+  }
+
+  &__title {
+    color: $primary-color;
+    margin: 10px 0;
+    font-size: 16px;
+  }
+}
+
+// footer
+footer {
+  background-color: $color-footer-bg;
+
+  & p {
+    color: $font-img;
+    text-align: center;
+    padding: 20px;
+  }
+}
