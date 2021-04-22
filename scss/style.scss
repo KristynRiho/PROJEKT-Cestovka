@@ -14,6 +14,7 @@ $bg-color: #f0f0f0;
 $font-img: #fff;
 $color-footer-bg: #444444;
 $font-base: 'Montserrat', sans-serif;
+$font-open: 'Open Sans', sans-serif;
 
 body {
   padding: 30px 20px;
@@ -45,63 +46,114 @@ body {
     padding: 20px;
   }
 
-  &__item a:hover {
+  &__item a:hover,
+  &__item a:focus {
     background-color: $primary-color;
     color: $font-img;
   }
 }
 
 // MAIN ********************
+.info__imgs,
+.info__text,
+.last-minute__grid,
+.news__grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr;
+}
+
+section,
+.info__imgs {
+  margin-bottom: 40px;
+}
+
+.info p {
+  font-family: $font-open;
+}
+
+h2 {
+  margin-bottom: 20px;
+}
+
 .tip {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin: 20px;
-  padding: 20px;
+  padding: 30px;
   color: $font-img;
+
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+
+  &1 {
+    background-image: linear-gradient(
+        rgba(182, 182, 182, 0.13),
+        rgba(77, 77, 77, 0.199)
+      ),
+      url('../img/palmy.png');
+  }
+
+  &2 {
+    background-image: linear-gradient(
+        rgba(182, 182, 182, 0.13),
+        rgba(77, 77, 77, 0.199)
+      ),
+      url('../img/jezero2.png');
+  }
+
+  &3 {
+    background-image: linear-gradient(
+        rgba(182, 182, 182, 0.13),
+        rgba(77, 77, 77, 0.199)
+      ),
+      url('../img/nakole.png');
+  }
+
+  &4 {
+    background-image: linear-gradient(
+        rgba(182, 182, 182, 0.13),
+        rgba(77, 77, 77, 0.199)
+      ),
+      url('../img/lodicka.png');
+  }
+
+  &5 {
+    background-image: linear-gradient(
+        rgba(182, 182, 182, 0.13),
+        rgba(77, 77, 77, 0.199)
+      ),
+      url('../img/podkova.png');
+  }
+
+  &6 {
+    background-image: linear-gradient(
+        rgba(182, 182, 182, 0.13),
+        rgba(77, 77, 77, 0.199)
+      ),
+      url('../img/zatoka.png');
+  }
 
   & span {
     color: $font-img;
-    padding: 20px;
+    padding: 10px;
     background-color: $primary-color;
   }
-}
-.tip--big {
-  min-height: 240px;
 
-  & h3 {
-    margin-bottom: 20px;
-    font-size: 28px;
+  &--big {
+    min-height: 240px;
+
+    & h3 {
+      margin-bottom: 20px;
+      font-size: 28px;
+    }
   }
-}
 
-.tip--small {
-  min-height: 150px;
-  font-size: 20px;
-}
-
-.tip1 {
-  background-image: url('img/palmy.png');
-}
-
-.tip2 {
-  background-image: url('img/jezero2.png');
-}
-
-.tip3 {
-  background-image: url('img/nakole.png');
-}
-
-.tip4 {
-  background-image: url('img/lodicka.png');
-}
-
-.tip5 {
-  background-image: url('img/podkova.png');
-}
-
-.tip6 {
-  background-image: url('img/zatoka.png');
+  &--small {
+    min-height: 150px;
+    font-size: 20px;
+  }
 }
 
 .services {
@@ -111,7 +163,6 @@ body {
 
   padding: 20px;
   background-color: $bg-color;
-  margin-bottom: 10px;
 
   &__img {
     margin: 0 auto;
@@ -119,8 +170,8 @@ body {
   }
 
   &__text {
-    margin-left: 20px;
     flex-basis: 80%;
+    margin-left: 20px;
   }
   & h5 {
     font-size: 18px;
@@ -129,14 +180,10 @@ body {
   }
 }
 
-section {
-  margin-bottom: 40px;
-}
-
+// sekce novinky
 .new {
   padding: 20px;
   background-color: $bg-color;
-  margin-top: 20px;
 
   &__date {
     color: #888888;
@@ -157,5 +204,78 @@ footer {
     color: $font-img;
     text-align: center;
     padding: 20px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  .hero__menu {
+    margin: 20px;
+  }
+
+  .info__imgs {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 360px 180px;
+  }
+  .tip1 {
+    grid-column: 1 / -1;
+  }
+
+  .info__text {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 180px 180px;
+  }
+
+  .last-minute__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 360px 180px;
+  }
+  .tip4 {
+    grid-column: 1 / -1;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .info__imgs {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 180px 180px;
+  }
+
+  .tip1 {
+    grid-column: 1 / span 2;
+    grid-row: 1 / -1;
+  }
+
+  .info__text {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: minmax(180px, 230px);
+  }
+
+  .services {
+    flex-direction: column;
+
+    &__text {
+      margin-top: 20px;
+      text-align: center;
+    }
+  }
+  .last-minute__grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 180px 180px;
+  }
+
+  .tip4 {
+    grid-column: 2 / -1;
+    grid-row: 1 / -1;
+  }
+
+  .news__grid {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
